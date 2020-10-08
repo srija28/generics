@@ -3,8 +3,18 @@ package com.capgemini;
 import java.lang.*;
 
 
-public class MaximumTest {
+public class MaximumTest<T extends Comparable<T>> {
+	T x,y,z;
 	
+	public MaximumTest(T x, T y, T z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	public T maximum() {
+		return MaximumTest.maximum(x,y,z);
+	}
+
 	public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
 		T max =x;
 		if(y.compareTo(max)>0) {
