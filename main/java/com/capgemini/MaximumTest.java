@@ -1,46 +1,40 @@
 package com.capgemini;
 
 import java.lang.*;
+import java.util.Arrays;
+import java.lang.Integer;
+
 
 
 public class MaximumTest<T extends Comparable<T>> {
-	T x,y,z;
+	T max;
 	
-	public MaximumTest(T x, T y, T z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
 	public T maximum() {
-		return MaximumTest.maximum(x,y,z);
+		return this.max;
 	}
 
-	public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
-		T max =x;
-		if(y.compareTo(max)>0) {
-			max=y;
-		}
-		if(z.compareTo(max)>0) {
-			max=z;
-		}
-		System.out.println("The max number is "+max);
-		return max;	
+	public MaximumTest() {
 		
 	}
 
+
+	public T MaxOfAll(T... values) {
+		Arrays.sort(values);
+		this.max = values[values.length - 1];
+		System.out.println("The max is :"+max);
+		return max;
+	}
+
 	public static void main(String[] args) {
-		Integer x = 10;
-		Integer y = 20;
-		Integer z = 30;
-		maximum(x,y,z);
-		Float i = (float) 1.1;
-		Float j = (float) 2.1;
-		Float k = (float) 3.1;
-		String a ="Apple";
-		String b="banana";
-		String c ="peach";
-		maximum(i,j,k);
-		maximum(a,b,c);
+		
+		MaximumTest<Integer> i = new MaximumTest<Integer>();
+		i.MaxOfAll(1,2,3,4,5);
+		MaximumTest<Float> f = new MaximumTest<Float>();
+		f.MaxOfAll(1.2f,2.2f,3.3f,4.4f);
+		MaximumTest<String> s=new MaximumTest<String>();
+		s.MaxOfAll("peach","apple","banana","book");
+		
+		
 	}
 		
 }
