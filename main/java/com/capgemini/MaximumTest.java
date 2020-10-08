@@ -1,19 +1,19 @@
 package com.capgemini;
 
 import java.lang.*;
-import java.lang.Integer;
+import java.lang.Float;
 
 public class MaximumTest {
-	Integer x,y,z;
+	Float x,y,z;
 
-	public MaximumTest(Integer x, Integer y, Integer z) {
+	public MaximumTest(Float x, Float y, Float z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 	
-	public static Integer toFindMax(Integer x, Integer y, Integer z)  {
-		Integer max =x;
+	public static Float toFindMax(Float x, Float y, Float z)  {
+		Float max =x;
 		if(y.compareTo(max)>0) {
 			max=y;
 		}
@@ -24,9 +24,9 @@ public class MaximumTest {
 		return max;	
 	}
 	public static void main(String[] args) {
-		Integer x = 10;
-		Integer y = 20;
-		Integer z = 30;
+		Float x = (float) 1.1;
+		Float y = (float) 2.1;
+		Float z = (float) 3.1;
 		toFindMax(x,y,z);
 	}
 		
