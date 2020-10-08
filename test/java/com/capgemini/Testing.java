@@ -8,7 +8,7 @@ public class Testing {
 	@Test
 	public void testFindMax() {
 		
-		Assert.assertEquals(new Integer(30), MaximumTest.toFindMax(10, 20, 30));
+		Assert.assertEquals(new Integer(30), MaximumTest.toFindMax(30, 20, 10));
 		
 		
 	}
